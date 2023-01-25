@@ -1,0 +1,93 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+    <a mat-icon-button (click)="snav.toggle()">
+        Emerald Perks
+    </a>
+
+    <!-- <a (click)="logout()">Logout</a> -->
+    <span class="flexExpand"></span>
+
+    <div >
+      <a mat-button (click)="logout()"> Logout </a>
+    </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+<div>
+    <mat-drawer-container>
+        <mat-drawer #snav [mode]="'side'">
+            <mat-nav-list>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Home
+                        <a mat-list-item routerLinkActive="active" [routerLink]="['']"></a>
+                    </mat-expansion-panel-header>
+                </mat-expansion-panel>
+
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Loan Products
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        <a mat-list-item routerLinkActive="active" [routerLink]="['sidenav/paydownconsent']">Em Adv Pay Down Consent</a>
+                    </mat-nav-list>
+                    <mat-nav-list>
+                        <a mat-list-item routerLinkActive="active" [routerLink]="['sidenav/resetreq']">Emerald Advance Reset Request</a>
+                    </mat-nav-list>
+                    <mat-nav-list>
+                        <a mat-list-item routerLinkActive="active" [routerLink]="['/client']">TestMicroFederation</a>
+                    </mat-nav-list>
+                </mat-expansion-panel>
+                
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Emerald Card
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        <a mat-list-item routerLinkActive="active" [routerLink]="['/client']">Issuance/Reissuance</a>
+                    </mat-nav-list>
+                    <mat-nav-list>
+                        <a mat-list-item routerLinkActive="active" [routerLink]="['sidenav/paydownconsent']">Direct Deposit Form</a>
+                    </mat-nav-list>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Emerald Savings
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        <a mat-list-item routerLinkActive="active" [routerLink]="['sidenav/paydownconsent']">Open Emerald Savings Account</a>
+                    </mat-nav-list>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Debt Submission
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        <a mat-list-item routerLinkActive="active" [routerLink]="['sidenav/paydownconsent']">Debt Dispute Form</a>
+                    </mat-nav-list>
+                    <mat-nav-list>
+                        <a mat-list-item routerLinkActive="active" [routerLink]="['sidenav/paydownconsent']">Tax Prep Debt Removal Form</a>
+                    </mat-nav-list>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Bank Product (Revealed) Audits
+                    </mat-expansion-panel-header>
+                </mat-expansion-panel>
+
+
+                <!-- <a mat-list-item routerLinkActive="active" [routerLink]="['sidenav/resetreq']">Reset Request</a>
+                <a mat-list-item routerLinkActive="active" [routerLink]="['sidenav/about']">About</a> -->
+            </mat-nav-list>
+        </mat-drawer>
+
+        <mat-drawer-content class="app-view">
+            <router-outlet></router-outlet>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
