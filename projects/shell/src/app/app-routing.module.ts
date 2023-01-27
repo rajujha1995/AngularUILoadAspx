@@ -20,12 +20,12 @@ const routes: Routes = [
           loadChildren: () => import('./loan-product/reset-req/reset-req.module').then(m => m.ResetReqModule)
         }
       ],
-      canActivate: [MsalGuard]
+      //canActivate: [MsalGuard]
     },
     {
        path:'dashboard', 
        loadChildren: () => import('./shell-feature/shell-feature.module').then(m => m.ShellFeatureModule),
-       canActivate: [MsalGuard]
+       //canActivate: [MsalGuard]
     },
     {
       path: 'client',

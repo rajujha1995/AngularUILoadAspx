@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reset-req.component.scss']
 })
 export class ResetReqComponent implements OnInit {
+  
+  _URL:string= "https://localhost:44310/Contact.aspx";
 
   constructor() { }
 

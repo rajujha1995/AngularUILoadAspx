@@ -17,6 +17,7 @@ import { ResetReqComponent } from './loan-product/reset-req/reset-req.component'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { CommonAspxDisplayComponent } from './common-aspx-display/common-aspx-display.component';
 
 const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1; // Remove this line to use Angular Universal
 
@@ -77,7 +78,8 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     AppComponent,
     SideNavComponent,
     PayDownConsentComponent,
-    ResetReqComponent
+    ResetReqComponent,
+    CommonAspxDisplayComponent
   ],
   imports: [
     BrowserModule,
