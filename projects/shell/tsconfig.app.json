@@ -5,7 +5,7 @@
     "types": [],
     "target": "es2020"
   },
-  "files": [
+    "files": [
     "src/main.ts",
     "src/polyfills.ts"
   ],

@@ -8,6 +8,116 @@ import { MsalService } from '@azure/msal-angular';
 })
 export class SideNavComponent implements OnInit {
 
+  menus = [{
+    "userID": "tst-perks-fso",
+    "officeID": "24590",
+    "menuOptions": [
+      {
+        "id": "mnuhome",
+        "text": "Home",
+        "url": "~/Home.aspx",
+        "enabled": true,
+        "options": null
+      },
+      {
+        "id": "mnu100",
+        "text": "Loan Products",
+        "url": "",
+        "enabled": true,
+        "options": [
+          {
+            "id": "mnu110",
+            "text": "Emerald Advance Application",
+            "url": "https://emeraldadvance-qa.hrblock.com/",
+            "enabled": true,
+            "options": null
+          },
+          {
+            "id": "mnu111",
+            "text": "Em Adv Pay Down Consent",
+            "url": "~/EAPayDownStep1.aspx",
+            "enabled": true,
+            "options": null
+          },
+          {
+            "id": "mnu112",
+            "text": "Emerald Advance Reset Request",
+            "url": "~/EAResetStep1.aspx",
+            "enabled": true,
+            "options": null
+          }
+        ]
+      },
+      {
+        "id": "mnu200",
+        "text": "Emerald Card",
+        "url": "",
+        "enabled": true,
+        "options": [
+          {
+            "id": "mnu210",
+            "text": "Issuance/Reissuance",
+            "url": "~/ECIssueStart.aspx",
+            "enabled": true,
+            "options": null
+          },
+          {
+            "id": "mnu213",
+            "text": "Direct Deposit Form",
+            "url": "~/ECDirDepositStart.aspx",
+            "enabled": true,
+            "options": null
+          }
+        ]
+      },
+      {
+        "id": "mnu300",
+        "text": "Emerald Savings",
+        "url": "",
+        "enabled": true,
+        "options": [
+          {
+            "id": "mnu310",
+            "text": "Open Emerald Savings Account",
+            "url": "~/OpenEmrSavAccount.aspx",
+            "enabled": true,
+            "options": null
+          }
+        ]
+      },
+      {
+        "id": "mnu400",
+        "text": "Debt Submission",
+        "url": "",
+        "enabled": true,
+        "options": [
+          {
+            "id": "mnu410",
+            "text": "Debt Dispute Form",
+            "url": "~/DebtDispute",
+            "enabled": true,
+            "options": null
+          },
+          {
+            "id": "mnu411",
+            "text": "Tax Prep Debt Removal Form",
+            "url": "~/DebtRemoval",
+            "enabled": true,
+            "options": null
+          }
+        ]
+      },
+      {
+        "id": "mnu500",
+        "text": "Bank Product (Revealed) Audits",
+        "url": "~/AuditCheck",
+        "enabled": true,
+        "options": null
+      }
+    ]
+  }]
+
+
   constructor(private authService:MsalService) { }
 
   ngOnInit(): void {
