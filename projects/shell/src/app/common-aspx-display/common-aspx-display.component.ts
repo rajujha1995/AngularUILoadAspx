@@ -17,5 +17,5 @@ export class CommonAspxDisplayComponent implements OnInit {
   ngOnInit(): void {
      this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this._URL!);
   }
-
-}
+  
+ }

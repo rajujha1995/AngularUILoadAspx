@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PayDownConsentComponent implements OnInit {
 
-  _URL:string= "https://localhost:44310/About.aspx";
+  _URL:string= "https://localhost:44310";
 
   constructor() { }
 
