@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MsalService } from '@azure/msal-angular';
 
 @Component({
@@ -6,6 +7,7 @@ import { MsalService } from '@azure/msal-angular';
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.scss']
 })
+
 export class SideNavComponent implements OnInit {
 
   menus = [{
@@ -25,13 +27,6 @@ export class SideNavComponent implements OnInit {
         "url": "",
         "enabled": true,
         "options": [
-          {
-            "id": "mnu110",
-            "text": "Emerald Advance Application",
-            "url": "https://emeraldadvance-qa.hrblock.com/",
-            "enabled": true,
-            "options": null
-          },
           {
             "id": "mnu111",
             "text": "Em Adv Pay Down Consent",
@@ -118,9 +113,20 @@ export class SideNavComponent implements OnInit {
   }]
 
 
-  constructor(private authService:MsalService) { }
+  constructor(private authService: MsalService, private _router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  getComponentName(url: any) 
+  {   
+    url = url.substring(2, url.lastIndexOf("."));
+    // alert(url);
+    if(url=="EAPayDownStep1")
+      this._router.navigate(['sidenav/paydownconsent']);  
+      else if(url=="EAResetStep1")
+      this._router.navigate(['sidenav/resetreq']);
+    
   }
 
   logout(popup?: boolean) {
@@ -133,3 +139,10 @@ export class SideNavComponent implements OnInit {
     }
   }
 }
+
+
+
+// function getComponentName(arg0: string) {
+//   throw new Error('Function not implemented.');
+// }
+

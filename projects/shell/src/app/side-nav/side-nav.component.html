@@ -13,7 +13,6 @@
     </mat-toolbar-row>
 </mat-toolbar>
 
-
 <div>
     <mat-drawer-container>
         <mat-drawer #snav [mode]="'side'">
@@ -25,20 +24,21 @@
                                 <mat-expansion-panel>
                                     <mat-expansion-panel-header>
                                         {{parentOptions.text}}
-                                        <a mat-list-item routerLinkActive="active"
-                                            [routerLink]="['{{parentOptions.url}}']"></a>
+                                        <a mat-list-item routerLinkActive="active" (click)="getComponentName(parentOptions.url)"></a>
                                     </mat-expansion-panel-header>
 
                                     <div *ngIf="parentOptions.options && parentOptions.options.length">
                                         <div *ngFor="let childOptions of parentOptions.options">
                                             <div *ngIf="childOptions.enabled==true">
                                                 <mat-nav-list>
-                                                    <a mat-list-item routerLinkActive="active"
-                                                        href="{{childOptions.url}}">{{childOptions.text}}</a>
+                                                    <!-- href="{{childOptions.url}}" -->
+                                                    <!-- [routerLink]="['sidenav/paydownconsent']" -->
+                                                    <a mat-list-item routerLinkActive="active" (click)="getComponentName(childOptions.url)"
+                                                        >{{childOptions.text}}</a>
                                                 </mat-nav-list>
                                             </div>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </mat-expansion-panel>
                             </div>
                         </div>
